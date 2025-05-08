@@ -8,13 +8,6 @@ public class Main {
 
         System.out.println("Room available: " + room.isAvailable()); // Expected: true
 
-        // Employee testing
-        Employee emp = new Employee("E001", "Karina", "Housekeeping", 20.0, 0.0);
-        emp.punchTimeCard(9.0);   // Punch in at 9:00 AM
-        emp.punchTimeCard(17.5);  // Punch out at 5:30 PM => 8.5 hours
 
-        System.out.println("Total pay: $" + emp.getTotalPay());
-        System.out.println("Regular hours: " + emp.getRegularHours());
-        System.out.println("Overtime hours: " + emp.getOvertimeHours());
     }
 }

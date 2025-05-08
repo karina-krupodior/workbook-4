@@ -17,17 +17,24 @@ public class Employee {
         this.isPunchedIn = false;
     }
 
-    public void punchTimeCard(double time) {
+    public void punchIn(double time) {
         if (!isPunchedIn) {
             startTime = time;
             isPunchedIn = true;
             System.out.println(name + " punched in at " + time);
         } else {
-            double endTime = time;
-            double workedHours = endTime - startTime;
+            System.out.println(name + " is already punched in.");
+        }
+    }
+
+    public void punchOut(double time) {
+        if (isPunchedIn) {
+            double workedHours = time - startTime;
             hoursWorked += workedHours;
             isPunchedIn = false;
-            System.out.println(name + " punched out at " + endTime + ". Worked " + workedHours + " hours.");
+            System.out.println(name + " punched out at " + time + ". Worked " + workedHours + " hours.");
+        } else {
+            System.out.println(name + " has not punched in.");
         }
     }
 
